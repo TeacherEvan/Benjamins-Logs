@@ -1,0 +1,39 @@
+# Installed Skills Inventory - 2026-02-20
+
+## ClawHub Skills (3)
+
+1. coding (v1.0.3)
+   - Purpose: Learn and apply coding style preferences
+   - Memory: ~/coding/memory.md (max 100 lines)
+   - Privacy: Local only, no external calls
+   - Location: ~/.openclaw/workspace/skills/coding/
+
+2. productivity (v1.0.3)
+   - Purpose: Productivity frameworks, time management
+   - Memory: ~/productivity/memory.md
+   - Features: Time blocking, energy management, context-specific systems
+   - Privacy: Local only, no calendar/email access
+   - Location: ~/.openclaw/workspace/skills/productivity/
+
+3. openclaw-update-skill (v1.1.1)
+   - Purpose: Check for and apply OpenClaw updates
+   - Commands: openclaw update status
+   - Installation: pnpm (global)
+   - Location: ~/.openclaw/workspace/skills/openclaw-update-skill/
+
+## Workspace Skills (1)
+
+4. secureclaw (v2.1.0)
+   - Purpose: Security hardening (OWASP ASI aligned)
+   - Features: 15 core rules, 9 scripts, 4 pattern databases
+   - Scripts: quick-audit.sh, quick-harden.sh, check-integrity.sh, etc.
+   - Location: ~/.openclaw/workspace/skills/secureclaw/
+
+## NPM Global Skills (27)
+
+blogwatcher, clawhub, eightctl, gemini, gh-issues, gifgrep, github, 
+gog, goplaces, healthcheck, himalaya, mcporter, nano-banana-pro, 
+nano-pdf, openai-whisper, openhue, oracle, ordercli, sag, 
+skill-creator, songsee, sonoscli, tmux, video-frames, wacli, weather
+
+Total: 31 skills available

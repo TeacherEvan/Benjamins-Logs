@@ -1,0 +1,63 @@
+gateway connect failed: Error: pairing required
+OpenClaw status
+
+Overview
+┌─────────────────┬───────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item            │ Value                                                                                             │
+├─────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Dashboard       │ http://127.0.0.1:18789/                                                                           │
+│ OS              │ linux 6.14.0-1018-aws (x64) · node 25.6.1                                                         │
+│ Tailscale       │ off                                                                                               │
+│ Channel         │ stable (default)                                                                                  │
+│ Update          │ pnpm · npm latest 2026.2.19-2                                                                     │
+│ Gateway         │ local · ws://127.0.0.1:18789 (local loopback) · reachable 23ms · auth token+password · ip-172-31- │
+│                 │ 33-6 (172.31.33.6) app 2026.2.15 linux 6.14.0-1018-aws                                            │
+│ Gateway service │ systemd installed · enabled · running (pid 57639, state active)                                   │
+│ Node service    │ systemd not installed                                                                             │
+│ Agents          │ 1 · no bootstraps · sessions 6 · default main active 1m ago                                       │
+│ Memory          │ 0 files · 0 chunks · dirty · sources memory · plugin memory-core · vector ready · fts ready ·     │
+│                 │ cache on (0)                                                                                      │
+│ Probes          │ skipped (use --deep)                                                                              │
+│ Events          │ none                                                                                              │
+│ Heartbeat       │ 30m (main)                                                                                        │
+│ Sessions        │ 6 active · default claude-sonnet-4.5 (128k ctx) · ~/.openclaw/agents/main/sessions/sessions.json  │
+└─────────────────┴───────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Security audit
+Summary: 0 critical · 2 warn · 1 info
+  WARN Reverse proxy headers are not trusted
+    gateway.bind is loopback and gateway.trustedProxies is empty. If you expose the Control UI through a reverse proxy, configure trusted proxies so local-client c…
+    Fix: Set gateway.trustedProxies to your proxy IPs or keep the Control UI local-only.
+  WARN Gateway password is stored in config
+    gateway.auth.password is set in the config file; prefer environment variables for secrets when possible.
+    Fix: Prefer OPENCLAW_GATEWAY_PASSWORD (env) and remove gateway.auth.password from disk.
+Full report: openclaw security audit
+Deep probe: openclaw security audit --deep
+
+Channels
+┌──────────┬─────────┬────────┬───────────────────────────────────────────────────────────────────────────────────────┐
+│ Channel  │ Enabled │ State  │ Detail                                                                                │
+├──────────┼─────────┼────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│ Telegram │ ON      │ OK     │ token config (8565…ugz0 · len 46) · accounts 1/1                                      │
+│ WhatsApp │ ON      │ OK     │ linked · +27616642713 · auth 10m ago · accounts 1                                     │
+└──────────┴─────────┴────────┴───────────────────────────────────────────────────────────────────────────────────────┘
+
+Sessions
+┌──────────────────────────────────────────────────────────┬────────┬─────────┬───────────────────┬───────────────────┐
+│ Key                                                      │ Kind   │ Age     │ Model             │ Tokens            │
+├──────────────────────────────────────────────────────────┼────────┼─────────┼───────────────────┼───────────────────┤
+│ agent:main:telegram:direct:8290…                         │ direct │ 1m ago  │ claude-sonnet-4.5 │ 40k/128k (31%)    │
+│ agent:main:main                                          │ direct │ 1m ago  │ gpt-5-mini        │ 68k/128k (53%)    │
+│ agent:main:telegram:group:-1003…                         │ group  │ 5m ago  │ claude-sonnet-4.5 │ 82k/128k (64%)    │
+│ agent:main:whatsapp:direct:+276…                         │ direct │ 2h ago  │ claude-sonnet-4.5 │ 17k/128k (14%)    │
+│ agent:main:telegram:group:-1002…                         │ group  │ 33h ago │ claude-sonnet-4.5 │ unknown/128k (?%) │
+│ agent:main:whatsapp:direct:+666…                         │ direct │ 4d ago  │ grok-code-fast-1  │ 74k/200k (37%)    │
+└──────────────────────────────────────────────────────────┴────────┴─────────┴───────────────────┴───────────────────┘
+
+FAQ: https://docs.openclaw.ai/faq
+Troubleshooting: https://docs.openclaw.ai/troubleshooting
+
+Next steps:
+  Need to share?      openclaw status --all
+  Need to debug live? openclaw logs --follow
+  Need to test channels? openclaw status --deep

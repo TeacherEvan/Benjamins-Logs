@@ -1,0 +1,5 @@
+github.com
+  ✓ Logged in to github.com account TeacherEvan (/home/ubuntu/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: github_pat_11BNJJB7Y0fCGhqWVtp51A_***********************************************************
